@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
+import com.cpe.jee.dao.EmployeeDAO;
 import com.cpe.jee.facade.EmployeeManagerLocal;
 import com.irc.jee.model.Employee;
 
