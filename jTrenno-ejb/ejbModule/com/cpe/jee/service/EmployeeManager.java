@@ -28,32 +28,53 @@ public class EmployeeManager implements EmployeeManagerLocal {
 
 	@Override
 	public void save(Employee e) {
-		// TODO Auto-generated method stub
-		
+		isEmployeeWithAllData(e);
+		employeeDAO.save(e);
 	}
 
 	@Override
 	public Employee update(Employee e) {
-		// TODO Auto-generated method stub
-		return null;
+		isEmployeeWithAllData(e);
+		return employeeDAO.update(e);
 	}
 
 	@Override
 	public void delete(Employee e) {
-		// TODO Auto-generated method stub
-		
+		employeeDAO.delete(e);
 	}
 
 	@Override
 	public Employee find(int employeeID) {
-		// TODO Auto-generated method stub
-		return null;
+		return employeeDAO.find(employeeID);
 	}
 
 	@Override
 	public List<Employee> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return employeeDAO.findAll();
+	}
+	
+	private void isEmployeeWithAllData(Employee e) {
+		boolean hasError = false;
+		if(e == null) {
+			hasError = true;
+		}
+		if(e.getFirstname() == null || "".equals(e.getFirstname().trim())) {
+			hasError = true;
+		}
+		if(e.getLastname() == null || "".equals(e.getLastname().trim())) {
+			hasError = true;
+		}
+		if(e.getUsername() == null || "".equals(e.getUsername().trim())) {
+			hasError = true;
+		}
+		if(e.getBirthDate() == null) {
+			hasError = true;
+		}
+		
+		if(hasError) {
+			   throw new IllegalArgumentException("The employee is missing data. Check the firstname, lastname, username and birthdate, they should have value.");
+		}
+		
 	}
 
 }
