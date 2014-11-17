@@ -1,8 +1,6 @@
 package com.cpe.jee.dao;
 
 import javax.ejb.Stateless;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.irc.jee.model.Employee;
 
@@ -14,8 +12,7 @@ public class EmployeeDAO extends GenericDAO<Employee> {
 	 }
 
 	 public Employee findALLEmployee(){
-	  Map<String, Object> parameters = new HashMap<String, Object>(); 
 
-	  return super.findOneResult(Employee.FIND_ALL, parameters);
+	  return (Employee) super.findAll();
 	 }
 }
