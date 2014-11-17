@@ -1,8 +1,9 @@
 package com.cpe.jee.service;
 
-import com.cpe.jee.facade.ConversationManagerLocal;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+
+import com.cpe.jee.facade.ConversationManagerLocal;
 
 /**
  * Session Bean implementation class ConversationManager

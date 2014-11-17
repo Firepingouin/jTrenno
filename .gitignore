@@ -79,11 +79,16 @@ jTrenno-ejb/.classpath
 jTrenno-ejb/build/classes/.gitignore
 jTrenno-ejb/build/classes/META-INF/MANIFEST.MF
 jTrenno-ejb/ejbModule/META-INF/MANIFEST.MF
-jTrenno-jpa/.classpath
+jTrenno-ejb/.gitignore
+jTrenno-jpa/.gitignore
+jTrenno-web/bin/*
+jTrenno-web/bin/
+jTrenno-web/bin/jTrenno-jpa/.classpath
 jTrenno-jpa/build/classes/.gitignore
 jTrenno-jpa/build/classes/META-INF/beans.xml
 jTrenno-jpa/build/classes/META-INF/MANIFEST.MF
 jTrenno-jpa/build/classes/META-INF/persistence.xml
+jTrenno-jpa/ejbModule/META-INF/persistence.xml
 
 jTrenno-ear/.settings/*
 jTrenno-ejb/.settings/*
@@ -101,7 +106,7 @@ jTrenno-web/build/*
 jTrenno-ejb/.settings/org.eclipse.wst.common.component
 
 *.class
-jTrenno-ejb/build/
+jTrenno-ejb/build/*
 
 !*.java
 !*/

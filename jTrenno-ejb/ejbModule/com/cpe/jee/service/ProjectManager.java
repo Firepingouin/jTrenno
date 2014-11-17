@@ -1,8 +1,9 @@
 package com.cpe.jee.service;
 
-import com.cpe.jee.facade.ProjectManagerLocal;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+
+import com.cpe.jee.facade.ProjectManagerLocal;
 
 /**
  * Session Bean implementation class ProjectManager

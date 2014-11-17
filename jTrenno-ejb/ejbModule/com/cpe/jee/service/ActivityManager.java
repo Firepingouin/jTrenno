@@ -1,8 +1,9 @@
 package com.cpe.jee.service;
 
-import com.cpe.jee.facade.ActivityLocal;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+
+import com.cpe.jee.facade.ActivityLocal;
 
 /**
  * Session Bean implementation class ActivityManager
