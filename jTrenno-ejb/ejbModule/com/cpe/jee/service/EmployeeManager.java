@@ -23,7 +23,7 @@ public class EmployeeManager implements EmployeeManagerLocal {
      * Default constructor. 
      */
     public EmployeeManager() {
-        // TODO Auto-generated constructor stub
+    	this.employeeDAO = new EmployeeDAO();
     }
 
 	@Override
