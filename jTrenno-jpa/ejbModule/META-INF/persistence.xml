@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="jTrenno-jpa">
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>  
+        <jta-data-source>java:jboss/datasources/jTrenno</jta-data-source>
+        <class>com.irc.jee.model.Activity</class>
+        <class>com.irc.jee.model.Conversation</class>
+        <class>com.irc.jee.model.Employee</class>
+        <class>com.irc.jee.model.Message</class>
+        <class>com.irc.jee.model.Project</class>
+    
+	<properties>
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"></property>
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jTrenno"></property>
+        <property name="hibernate.connection.username" value="root"></property>
+        <property name="hibernate.connection.password" value="root"></property>
+		</properties>
+	</persistence-unit>
+</persistence>
