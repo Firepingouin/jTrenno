@@ -11,9 +11,12 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name = "EMPLOYEE")
 @NamedQuery(name="Employee.findAll", query="SELECT e FROM Employee e")
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	public static final String FIND_ALL = "Employee.findAll";
 
 	@Id
 	private int id;
