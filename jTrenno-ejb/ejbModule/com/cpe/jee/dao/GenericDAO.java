@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
 public abstract class GenericDAO<T> {
-	private final static String UNIT_NAME = "CrudPU";
+	private final static String UNIT_NAME = "jTrenno-jpa";
 
 	@PersistenceContext(unitName = UNIT_NAME)
 	private EntityManager em;
