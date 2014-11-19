@@ -9,6 +9,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.irc.jee.model.Employee;
+
 @SessionScoped
 @Named
 public class Login implements Serializable {
@@ -18,31 +20,31 @@ public class Login implements Serializable {
    @Inject
    private Credentials credentials;
    @Inject
-   private UserManager userManager;
-   private User currentUser;
+   private EmployeeManager employeeManager;
+   private Employee currentEmployee;
 
    public void login() throws Exception {
-      User user = userManager.findUser(credentials.getUsername(), credentials.getPassword());
+	  Employee employee = employeeManager.findEmployee(credentials.getUsername());
 
-      if (user != null) {
-         this.currentUser = user;
+      if (employee != null) {
+         this.currentEmployee = employee;
          FacesContext.getCurrentInstance().addMessage(null,
-               new FacesMessage("Welcome, " + currentUser.getName()));
+               new FacesMessage("Welcome, " + currentEmployee.getFirstname()));
       }
    }
 
    public void logout() {
       FacesContext.getCurrentInstance().addMessage(null,
-            new FacesMessage("Goodbye, " + currentUser.getName()));
-      currentUser = null;
+            new FacesMessage("Goodbye, " + currentEmployee.getFirstname()));
+      currentEmployee= null;
    }
 
    public boolean isLoggedIn() {
-      return currentUser != null;
+      return currentEmployee != null;
    }
 
    @Produces
-   public User getCurrentUser() {
-      return currentUser;
+   public Employee getCurrentEmployee() {
+      return currentEmployee;
    }
 }

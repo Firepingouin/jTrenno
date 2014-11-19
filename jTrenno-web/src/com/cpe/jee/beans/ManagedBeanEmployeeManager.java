@@ -8,28 +8,31 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 
-@Named("userManager")
+import com.irc.jee.model.Employee;
+
+@Named("employeeManager")
 @RequestScoped
-public class ManagedBeanUserManager implements UserManager {
-	//@Inject
+public class ManagedBeanEmployeeManager implements EmployeeManager {
+	// @Inject
 	private transient Logger logger;
-	//@Inject
+	@PersistenceContext(unitName="jTrenno-jpa")
 	private EntityManager userDatabase;
 	@Inject
 	private UserTransaction utx;
-	private User newUser = new User();
+	private Employee newEmployee = new Employee();
 
 	@SuppressWarnings("unchecked")
 	@Produces
 	@Named
 	@RequestScoped
-	public List<User> getUsers() throws Exception {
+	public List<Employee> getEmployees() throws Exception {
 		try {
 			try {
 				utx.begin();
-				return userDatabase.createQuery("select u from User u")
+				return userDatabase.createQuery("select e from Employee e")
 						.getResultList();
 			} finally {
 				utx.commit();
@@ -40,12 +43,12 @@ public class ManagedBeanUserManager implements UserManager {
 		}
 	}
 
-	public String addUser() throws Exception {
+	public String addEmployee() throws Exception {
 		try {
 			try {
 				utx.begin();
-				userDatabase.persist(newUser);
-				logger.info("Added " + newUser);
+				userDatabase.persist(newEmployee);
+				logger.info("Added " + newEmployee);
 			} finally {
 				utx.commit();
 			}
@@ -53,19 +56,19 @@ public class ManagedBeanUserManager implements UserManager {
 			utx.rollback();
 			throw e;
 		}
-		return "userAdded";
+		return "employeeAdded";
 	}
 
-	public User findUser(String username, String password) throws Exception {
+	public Employee findEmployee(String username)
+			throws Exception {
 		try {
 			try {
 				utx.begin();
 				@SuppressWarnings("unchecked")
-				List<User> results = userDatabase
+				List<Employee> results = userDatabase
 						.createQuery(
-								"select u from User u where u.username=:username and u.password=:password")
-						.setParameter("username", username)
-						.setParameter("password", password).getResultList();
+								"select e from Employee e where e.username=:username")
+						.setParameter("username", username).getResultList();
 				if (results.isEmpty()) {
 					return null;
 				} else if (results.size() > 1) {
@@ -86,7 +89,7 @@ public class ManagedBeanUserManager implements UserManager {
 	@Produces
 	@RequestScoped
 	@Named
-	public User getNewUser() {
-		return newUser;
+	public Employee getNewEmployee() {
+		return newEmployee;
 	}
 }
