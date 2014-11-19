@@ -9,14 +9,6 @@
         <title>Hello world</title>
     </h:head>
     <h:body>
-        <h:form>
-        
-    <h:inputText id="name" value="#{personMbean.name}" a:placeholder="What's your name?" />
-    <h:commandButton value="Submit" />
-    <h:outputText value="Hello, #{personMbean.name}" />
-    
-    <h:outputText value="   Your Mail is, #{personMbean.email}" />
-</h:form>
-        
-    </h:body>
+		<h:link outcome="/users.xhtml">View users</h:link>
+	</h:body>
 </html>
