@@ -13,19 +13,19 @@
 				<legend>Registration</legend>
 
 				<h:outputLabel for="firstname">First Name</h:outputLabel>
-				<h:inputText id="firstname" value="#{employeeSignupBean.firstname}"
+				<h:inputText id="firstname" value="#{employeeModelBean.firstname}"
 					required="true"></h:inputText>
 				<h:outputLabel for="firstname">Last Name</h:outputLabel>
-				<h:inputText id="lastname" value="#{employeeSignupBean.lastname}"
+				<h:inputText id="lastname" value="#{employeeModelBean.lastname}"
 					required="true"></h:inputText>
 				<h:outputLabel for="firstname">Username</h:outputLabel>
-				<h:inputText id="username" value="#{employeeSignupBean.username}"
+				<h:inputText id="username" value="#{employeeModelBean.username}"
 					required="true"></h:inputText>
 				<h:outputLabel for="firstname">Mail</h:outputLabel>
-				<h:inputText id="email" value="#{employeeSignupBean.email}"
+				<h:inputText id="email" value="#{employeeModelBean.email}"
 					required="true"></h:inputText>
 				<h:outputLabel for="firstname">Birth date</h:outputLabel>
-				<h:inputText id="birthDate" value="#{employeeSignupBean.birthDate}"
+				<h:inputText id="birthDate" value="#{employeeModelBean.birthDate}"
 					required="true">
 					<f:convertDateTime pattern="yyyy-MM-dd"/>
 				</h:inputText>
@@ -33,7 +33,7 @@
 				<h:messages globalOnly="true" infoClass="info" />
 
 				<h:commandButton value="Add"
-					action="#{employeeController.addEmployee(employeeSignupBean)}" />
+					action="#{employeeController.addEmployee(employeeModelBean)}" />
 			</fieldset>
 		</h:form>
 	</ui:define>

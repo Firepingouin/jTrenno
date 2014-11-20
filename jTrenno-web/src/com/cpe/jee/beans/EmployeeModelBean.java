@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
-@ManagedBean
-@SessionScoped
+@ManagedBean (name="employeeModelBean")
+@RequestScoped
 public class EmployeeModelBean implements Serializable{
 	
 	/**

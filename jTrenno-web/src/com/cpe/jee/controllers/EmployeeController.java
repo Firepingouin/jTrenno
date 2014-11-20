@@ -3,7 +3,8 @@ package com.cpe.jee.controllers;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
-import com.cpe.jee.beans.EmployeeSignupBean;
+
+import com.cpe.jee.beans.EmployeeModelBean;
 import com.cpe.jee.facade.EmployeeManagerLocal;
 
 @ManagedBean
@@ -13,7 +14,7 @@ public class EmployeeController {
 	@Inject
 	private EmployeeManagerLocal employeeManager;
 
-	public void addEmployee(EmployeeSignupBean e) throws Exception {
+	public void addEmployee(EmployeeModelBean e) throws Exception {
 		try {
 			employeeManager.createEmployee(e.getFirstname(), e.getLastname(),
 					e.getUsername(), e.getEmail(), e.getBirthDate());
