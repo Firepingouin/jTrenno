@@ -8,8 +8,9 @@
 <ui:composition template="layout.xhtml">
 	<ui:define name="content">
 		<h:messages />
-		<h1>Users</h1>
-		<h:dataTable value="#{employeeManager.getEmployees()}" var="u" styleClass="table table-bordered">
+		<h1>jTrenno</h1>
+		<h2>Users</h2>
+		<h:dataTable value="#{employeeManager.getEmployees()}" var="u" styleClass="table table-striped">
 			<h:column>
 				<f:facet name="header">
 				Username
