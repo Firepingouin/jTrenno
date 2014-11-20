@@ -11,7 +11,7 @@
 
 		<h:messages />
 		<h1>Users</h1>
-		<h:dataTable value="#{employeeManager.getEmployees()}" var="u" styleClass="table table-bordered">
+		<h:dataTable value="#{employeeController.getEmployees()}" var="u" styleClass="table table-bordered">
 			<h:column>
 				<f:facet name="header">
 				Username

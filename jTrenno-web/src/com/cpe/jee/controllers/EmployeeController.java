@@ -1,11 +1,14 @@
 package com.cpe.jee.controllers;
 
+import java.util.List;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
 import com.cpe.jee.beans.EmployeeModelBean;
 import com.cpe.jee.facade.EmployeeManagerLocal;
+import com.irc.jee.model.Employee;
 
 @ManagedBean
 @ApplicationScoped
@@ -40,5 +43,9 @@ public class EmployeeController {
 		}
 		// This is the root cause message
 		return errorMessage;
+	}
+	
+	public List<Employee> getEmployees() {
+		return this.employeeManager.findAll();
 	}
 }
