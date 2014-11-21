@@ -11,28 +11,34 @@
 
 		<h:messages />
 		<h1>jTrenno</h1>
-		<h2>Users</h2>
-		<h:dataTable value="#{employeeController.getEmployees()}" var="u" styleClass="table table-striped">
+		<h2>Projects</h2>
+		<h:dataTable value="#{projectController.getProjects()}" var="u" styleClass="table table-striped">
 			<h:column>
 				<f:facet name="header">
-				Username
+				Name
 				</f:facet>
-				<h:outputText value="#{u.username}" />
+				<h:outputText value="#{u.name}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-               	First name
+               	Description
             	</f:facet>
-				<h:outputText value="#{u.firstname}" />
+				<h:outputText value="#{u.description}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-               Last name
+               Budget
             </f:facet>
-				<h:outputText value="#{u.lastname}" />
+				<h:outputText value="#{u.budget}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+               Manager
+            </f:facet>
+				<h:outputText value="#{u.employee.username}" />
 			</h:column>
 		</h:dataTable>
-		<h:link outcome="/addUser.xhtml">Add user</h:link>
+		<h:link outcome="/addProject.xhtml">Add project</h:link>
 	</ui:define>
 </ui:composition>
 </html>

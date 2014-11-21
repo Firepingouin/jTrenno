@@ -13,6 +13,7 @@ import com.cpe.jee.beans.ProjectModelBean;
 import com.cpe.jee.facade.EmployeeManagerLocal;
 import com.cpe.jee.facade.ProjectManagerLocal;
 import com.irc.jee.model.Employee;
+import com.irc.jee.model.Project;
 
 @ManagedBean
 @ApplicationScoped
@@ -55,5 +56,9 @@ public class ProjectController {
 			managers.put(e.getUsername(), e.getId());
 		}
 		return managers;
+	}
+	
+	public List<Project> getProjects() {
+		return projectManager.getProjects();
 	}
 }
