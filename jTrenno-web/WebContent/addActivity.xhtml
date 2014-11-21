@@ -10,11 +10,11 @@
 	<ui:define name="content">
 		<h:form>
 			<fieldset>
-				<legend>Activity creation</legend>
+				<legend>Ajout d'une activité</legend>
 
-				<h:outputLabel for="workedTime">WorkedTime</h:outputLabel>
+				<h:outputLabel for="workedTime">Temps de travail</h:outputLabel>
 
-				<h:outputLabel for="employee">Employee</h:outputLabel>
+				<h:outputLabel for="employee">Employé</h:outputLabel>
 
 				<h:selectOneMenu value="#{activityModelBean.employee}">
 					<f:selectItems value="#{activityController.getEmployeeMap()}" />
@@ -29,7 +29,7 @@
 
 				<h:messages globalOnly="true" infoClass="info" />
 
-				<h:commandButton value="Add"
+				<h:commandButton value="Ajouter"
 					action="#{activityController.addActivity(activityModelBean)}" />
 			</fieldset>
 		</h:form>
