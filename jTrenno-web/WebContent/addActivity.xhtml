@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<fieldset>
+				<legend>Project creation</legend>
+
+				<h:outputLabel for="name">Name</h:outputLabel>
+				<h:inputText id="name" value="#{projectModelBean.name}"
+					required="true"></h:inputText>
+				<h:outputLabel for="description">Description</h:outputLabel>
+				<h:inputText id="description" value="#{projectModelBean.description}"
+					required="true"></h:inputText>
+				<h:outputLabel for="budget">Budget</h:outputLabel>
+				<h:inputText id="budget" value="#{projectModelBean.budget}"
+					required="true"></h:inputText>
+
+				<h:messages globalOnly="true" infoClass="info" />
+
+				<h:commandButton value="Add"
+					action="#{projectController.addProject(projectModelBean)}" />
+			</fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
