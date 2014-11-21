@@ -1,7 +1,6 @@
 package com.cpe.jee.service;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
@@ -10,7 +9,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.cpe.jee.dao.EmployeeDAO;
 import com.cpe.jee.dao.ProjectDAO;
 import com.cpe.jee.facade.EmployeeManagerLocal;
 import com.cpe.jee.facade.ProjectManagerLocal;
@@ -33,7 +31,7 @@ public class ProjectManager implements ProjectManagerLocal {
 	
 	@Inject
 	private EmployeeManagerLocal employeeManager;
-
+	
 	@Override
 	public void createProject(float budget, String description, String name, int manager) {
 		Project p = new Project();
@@ -53,6 +51,10 @@ public class ProjectManager implements ProjectManagerLocal {
 	@Override
 	public Project find(int projectID) {
 		return projectDAO.find(projectID);
+	}
+	
+	public List<Project> getProjects() {
+		return em.createQuery("select p from Project p").getResultList();
 	}
 
 }
