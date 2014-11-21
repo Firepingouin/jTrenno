@@ -51,5 +51,9 @@ public class ActivityManager implements ActivityManagerLocal {
 	public List<Project> getProjectsList(){
 		return em.createQuery("select p from Project p").getResultList();
 	}
+	
+	public List<Activity> getActivities() {
+		return em.createQuery("SELECT a FROM Activity a").getResultList();
+	}
 
 }

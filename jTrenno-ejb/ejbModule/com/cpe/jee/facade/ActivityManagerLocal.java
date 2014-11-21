@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import com.irc.jee.model.Activity;
 import com.irc.jee.model.Employee;
 import com.irc.jee.model.Project;
 
@@ -12,4 +13,5 @@ public interface ActivityManagerLocal {
 	public abstract void createActivity(int workedTime, int employee, int project);
 	public abstract List<Employee> getEmployeesList();
 	public abstract List<Project> getProjectsList();
+	public abstract List<Activity> getActivities();
 }

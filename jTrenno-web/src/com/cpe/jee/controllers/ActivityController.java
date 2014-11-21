@@ -10,6 +10,7 @@ import javax.inject.Inject;
 
 import com.cpe.jee.beans.ActivityModelBean;
 import com.cpe.jee.facade.ActivityManagerLocal;
+import com.irc.jee.model.Activity;
 import com.irc.jee.model.Employee;
 import com.irc.jee.model.Project;
 
@@ -63,5 +64,9 @@ public class ActivityController {
 			projects.put(p.getName(), p.getId());
 		}
 		return projects;
+	}
+	
+	public List<Activity> getActivities() {
+		return activityManager.getActivities();
 	}
 }
