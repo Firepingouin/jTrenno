@@ -2,7 +2,8 @@ package com.cpe.jee.beans;
 
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -10,11 +11,11 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean (name="projectModelBean")
 @RequestScoped
 public class ProjectModelBean implements Serializable{
-
 	
 	private float budget;
 	private String description;
 	private String name;
+	private int manager;
 	
 	public ProjectModelBean() {
 		super();
@@ -44,7 +45,12 @@ public class ProjectModelBean implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 
+	public int getManager() {
+		return manager;
+	}
+
+	public void setManager(int manager) {
+		this.manager = manager;
+	}
 }

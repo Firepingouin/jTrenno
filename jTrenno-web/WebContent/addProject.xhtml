@@ -16,11 +16,14 @@
 				<h:inputText id="name" value="#{projectModelBean.name}"
 					required="true"></h:inputText>
 				<h:outputLabel for="description">Description</h:outputLabel>
-				<h:inputText id="description" value="#{projectModelBean.description}"
-					required="true"></h:inputText>
+				<h:inputText id="description"
+					value="#{projectModelBean.description}" required="true"></h:inputText>
 				<h:outputLabel for="budget">Budget</h:outputLabel>
 				<h:inputText id="budget" value="#{projectModelBean.budget}"
 					required="true"></h:inputText>
+				<h:selectOneMenu value="#{projectModelBean.manager}">
+					<f:selectItems value="#{projectController.getManagersMap()}" />
+				</h:selectOneMenu>
 
 				<h:messages globalOnly="true" infoClass="info" />
 
