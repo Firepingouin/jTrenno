@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layout.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<fieldset>
+				<legend>Activity creation</legend>
+
+				<h:outputLabel for="workedTime">WorkedTime</h:outputLabel>
+
+				<h:outputLabel for="employee">Employee</h:outputLabel>
+
+				<h:selectOneMenu value="#{activityModelBean.employee}">
+					<f:selectItems value="#{activityController.getEmployeeMap()}" />
+				</h:selectOneMenu>
+
+				<h:inputText id="project" value="#{activityModelBean.project}"
+					required="true"></h:inputText>
+
+				<h:selectOneMenu value="#{activityModelBean.project}">
+					<f:selectItems value="#{activityController.getProjectMap()}" />
+				</h:selectOneMenu>
+
+				<h:messages globalOnly="true" infoClass="info" />
+
+				<h:commandButton value="Add"
+					action="#{activityController.addActivity(activityModelBean)}" />
+			</fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

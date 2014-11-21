@@ -12,5 +12,6 @@ public interface ProjectManagerLocal {
 	
 	public abstract void createProject(float budget, String description, String name, int manager);
 	public abstract List<Employee> getManagersList();
+	public abstract Project find(int projectID);
 	public abstract List<Project> getProjects();
 }
