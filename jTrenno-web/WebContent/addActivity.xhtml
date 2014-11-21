@@ -13,21 +13,18 @@
 				<legend>Activity creation</legend>
 
 				<h:outputLabel for="workedTime">WorkedTime</h:outputLabel>
-				<h:inputText id="workedTime" value="#{activityModelBean.workedTime}"
-					required="true"></h:inputText>
+
 				<h:outputLabel for="employee">Employee</h:outputLabel>
-				<h:inputText id="employee" value="#{activityModelBean.employee}"
-					required="true"></h:inputText>
-				<h:outputLabel for="project">Project</h:outputLabel>
+
+				<h:selectOneMenu value="#{activityModelBean.employee}">
+					<f:selectItems value="#{activityController.getEmployeeMap()}" />
+				</h:selectOneMenu>
+
 				<h:inputText id="project" value="#{activityModelBean.project}"
 					required="true"></h:inputText>
-					
-				<h:selectOneMenu value="#{activityModelBean.employee}">
-					<f:selectItems value="#{activityController.employeeMap()}" />
-				</h:selectOneMenu>
-				
+
 				<h:selectOneMenu value="#{activityModelBean.project}">
-					<f:selectItems value="#{activityController.projectMap()}" />
+					<f:selectItems value="#{activityController.getProjectMap()}" />
 				</h:selectOneMenu>
 
 				<h:messages globalOnly="true" infoClass="info" />
