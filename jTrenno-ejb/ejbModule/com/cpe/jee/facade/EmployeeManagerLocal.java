@@ -1,5 +1,6 @@
 package com.cpe.jee.facade;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Local;
@@ -14,4 +15,5 @@ public interface EmployeeManagerLocal {
 	public abstract void delete (Employee e);
 	public abstract Employee find (int employeeID);	
 	public abstract List<Employee> findAll();
+	public abstract void createEmployee(String firstname, String lastname, String username, String mail, Date birthDate);
 }

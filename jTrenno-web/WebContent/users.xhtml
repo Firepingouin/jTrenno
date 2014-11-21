@@ -6,7 +6,9 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="layout.xhtml">
+
 	<ui:define name="content">
+
 		<h:messages />
 		<h1>jTrenno</h1>
 		<h2>Users</h2>
@@ -30,6 +32,7 @@
 				<h:outputText value="#{u.lastname}" />
 			</h:column>
 		</h:dataTable>
+		<h:link outcome="/addUser.xhtml">Add user</h:link>
 	</ui:define>
 </ui:composition>
 </html>
