@@ -1,11 +1,17 @@
 package com.cpe.jee.controllers;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
 import com.cpe.jee.beans.ActivityModelBean;
 import com.cpe.jee.facade.ActivityManagerLocal;
+import com.irc.jee.model.Employee;
+import com.irc.jee.model.Project;
 
 @ManagedBean
 @ApplicationScoped
@@ -39,5 +45,23 @@ public class ActivityController {
 		}
 		// This is the root cause message
 		return errorMessage;
+	}
+	
+	public Map<String,Integer> getEmployeeMap() {
+		List<Employee> employeeList = activityManager.getEmployeesList();
+		LinkedHashMap<String,Integer> employees = new LinkedHashMap<String,Integer>();
+		for(Employee e : employeeList) {
+			employees.put(e.getUsername(), e.getId());
+		}
+		return employees;
+	}
+	
+	public Map<String,Integer> getProjectMap() {
+		List<Project> projectList = activityManager.getProjectsList();
+		LinkedHashMap<String,Integer> projects = new LinkedHashMap<String,Integer>();
+		for(Project p : projectList) {
+			projects.put(p.getName(), p.getId());
+		}
+		return projects;
 	}
 }

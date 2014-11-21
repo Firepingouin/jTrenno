@@ -2,36 +2,25 @@ package com.cpe.jee.beans;
 
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import com.irc.jee.model.Employee;
-import com.irc.jee.model.Project;
-
-@ManagedBean (name="projectModelBean")
+@ManagedBean (name="activityModelBean")
 @RequestScoped
 public class ActivityModelBean implements Serializable{
 
 	private int workedTime;
-	private Employee employee;
-	private Project project;
+	private int employee;
+	private int project;
 	
 	public ActivityModelBean() {
 		super();
 	}
 	
-	public ActivityModelBean(int workedTime, Employee employee, Project project) {
+	public ActivityModelBean(int workedTime) {
 		super();
 		this.workedTime = workedTime;
-		this.employee = employee;
-		this.project = project;
 	}
 
 	public int getWorkedTime() {
@@ -42,20 +31,21 @@ public class ActivityModelBean implements Serializable{
 		this.workedTime = workedTime;
 	}
 
-	public Employee getEmployee() {
+	public int getEmployee() {
 		return employee;
 	}
 
-	public void setEmployee(Employee employee) {
+	public void setEmployee(int employee) {
 		this.employee = employee;
 	}
 
-	public Project getProject() {
+	public int getProject() {
 		return project;
 	}
 
-	public void setProject(Project project) {
+	public void setProject(int project) {
 		this.project = project;
 	}
+
 	
 }

@@ -10,22 +10,30 @@
 	<ui:define name="content">
 		<h:form>
 			<fieldset>
-				<legend>Project creation</legend>
+				<legend>Activity creation</legend>
 
-				<h:outputLabel for="name">Name</h:outputLabel>
-				<h:inputText id="name" value="#{projectModelBean.name}"
+				<h:outputLabel for="workedTime">WorkedTime</h:outputLabel>
+				<h:inputText id="workedTime" value="#{activityModelBean.workedTime}"
 					required="true"></h:inputText>
-				<h:outputLabel for="description">Description</h:outputLabel>
-				<h:inputText id="description" value="#{projectModelBean.description}"
+				<h:outputLabel for="employee">Employee</h:outputLabel>
+				<h:inputText id="employee" value="#{activityModelBean.employee}"
 					required="true"></h:inputText>
-				<h:outputLabel for="budget">Budget</h:outputLabel>
-				<h:inputText id="budget" value="#{projectModelBean.budget}"
+				<h:outputLabel for="project">Project</h:outputLabel>
+				<h:inputText id="project" value="#{activityModelBean.project}"
 					required="true"></h:inputText>
+					
+				<h:selectOneMenu value="#{activityModelBean.employee}">
+					<f:selectItems value="#{activityController.employeeMap()}" />
+				</h:selectOneMenu>
+				
+				<h:selectOneMenu value="#{activityModelBean.project}">
+					<f:selectItems value="#{activityController.projectMap()}" />
+				</h:selectOneMenu>
 
 				<h:messages globalOnly="true" infoClass="info" />
 
 				<h:commandButton value="Add"
-					action="#{projectController.addProject(projectModelBean)}" />
+					action="#{activityController.addActivity(activityModelBean)}" />
 			</fieldset>
 		</h:form>
 	</ui:define>
