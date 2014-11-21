@@ -11,7 +11,7 @@
 
 		<h:messages />
 		<h2>Activities</h2>
-		<h:dataTable value="#{activityController.getActivities}" var="u" styleClass="table table-striped">
+		<h:dataTable value="#{activityController.getActivities()}" var="u" styleClass="table table-striped">
 			<h:column>
 				<f:facet name="header">
 				Worked Time
