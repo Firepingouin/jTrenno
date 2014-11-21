@@ -10,26 +10,39 @@
 	<ui:define name="content">
 		<h:form>
 			<fieldset>
-				<legend>Project creation</legend>
+				<legend>Ajout d'un projet</legend>
 
-				<h:outputLabel for="name">Name</h:outputLabel>
-				<h:inputText id="name" value="#{projectModelBean.name}"
-					required="true"></h:inputText>
+				<h:outputLabel for="name">Nom</h:outputLabel>
+				<h:inputText
+					id="name"
+					value="#{projectModelBean.name}"
+					required="true">
+				</h:inputText>
+				<br/>
 				<h:outputLabel for="description">Description</h:outputLabel>
-				<h:inputText id="description"
-					value="#{projectModelBean.description}" required="true"></h:inputText>
+				<h:inputText
+					id="description"
+					value="#{projectModelBean.description}"
+					required="true">
+				</h:inputText>
+				<br/>
 				<h:outputLabel for="budget">Budget</h:outputLabel>
-				<h:inputText id="budget" value="#{projectModelBean.budget}"
-					required="true"></h:inputText>
+				<h:inputText
+					id="budget"
+					value="#{projectModelBean.budget}"
+					required="true">
+				</h:inputText>
+				<br/>
 				<h:selectOneMenu value="#{projectModelBean.manager}">
 					<f:selectItems value="#{projectController.getManagersMap()}" />
 				</h:selectOneMenu>
-
+				<br/>
 				<h:messages globalOnly="true" infoClass="info" />
-
-				<h:commandButton value="Add"
+		
+				<h:commandButton value="Ajouter"
 					action="#{projectController.addProject(projectModelBean)}" />
 			</fieldset>
+			<h:link class="btn btn-primary" outcome="/projects.xhtml">Revenir à la liste des projets</h:link>
 		</h:form>
 	</ui:define>
 </ui:composition>

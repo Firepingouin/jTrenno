@@ -10,7 +10,6 @@
 	<ui:define name="content">
 
 		<h:messages />
-		<h1>jTrenno</h1>
 		<h2>Projects</h2>
 		<h:dataTable value="#{projectController.getProjects()}" var="u" styleClass="table table-striped">
 			<h:column>
@@ -38,7 +37,7 @@
 				<h:outputText value="#{u.employee.username}" />
 			</h:column>
 		</h:dataTable>
-		<h:link outcome="/addProject.xhtml">Add project</h:link>
+		<h:link class="btn btn-primary" outcome="/addProject.xhtml">Ajouter un projet</h:link>
 	</ui:define>
 </ui:composition>
 </html>

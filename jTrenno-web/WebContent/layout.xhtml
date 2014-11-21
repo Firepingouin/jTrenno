@@ -4,8 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
+	<link rel="icon" href="ressources/img/favicon.png" />
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Login</title>
+	<title>jTrenno</title>
     <link href="ressources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 	<link href="style/main.css" rel="stylesheet" type="text/css" />
 	<link href="ressources/css/styles.css" rel="stylesheet" type="text/css" />
@@ -13,14 +14,22 @@
 </head>
 
 <body>
-	<h1>JTrenno</h1>
+	<h1><a href="/jTrenno-web/index.xhtml">JTrenno</a></h1>
 	<div id="main">
-		<div id="header"></div>
-		
-		<div id="sidebar"></div>
-
 		<div id="content" class="container">
-			<ui:insert name="content" />
+			<aside class="col-md-3">
+				<nav>
+					<ul>
+						<li><a href="/jTrenno-web/index.xhtml">Accueil</a></li>
+						<li><a href="/jTrenno-web/projects.xhtml">Liste des projets</a></li>
+						<li><a href="/jTrenno-web/users.xhtml">Liste des utilistaeurs</a></li>
+					</ul>
+				</nav>
+				<img src="ressources/img/trenno.jpg"></img>
+			</aside>
+			<div class="col-md-9 content">
+				<ui:insert name="content" />
+			</div>
 		</div>
 	</div>
 	<footer class="container">

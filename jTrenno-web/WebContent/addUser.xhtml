@@ -10,32 +10,37 @@
 	<ui:define name="content">
 		<h:form>
 			<fieldset>
-				<legend>Registration</legend>
+				<legend>Ajout d'un utilisateur</legend>
 
-				<h:outputLabel for="firstname">First Name</h:outputLabel>
+				<h:outputLabel for="firstname">Prénom</h:outputLabel>
 				<h:inputText id="firstname" value="#{employeeModelBean.firstname}"
 					required="true"></h:inputText>
-				<h:outputLabel for="firstname">Last Name</h:outputLabel>
+				<br/>
+				<h:outputLabel for="firstname">Nom</h:outputLabel>
 				<h:inputText id="lastname" value="#{employeeModelBean.lastname}"
 					required="true"></h:inputText>
-				<h:outputLabel for="firstname">Username</h:outputLabel>
+				<br/>
+				<h:outputLabel for="firstname">Pseudo</h:outputLabel>
 				<h:inputText id="username" value="#{employeeModelBean.username}"
 					required="true"></h:inputText>
-				<h:outputLabel for="firstname">Mail</h:outputLabel>
+				<br/>
+				<h:outputLabel for="firstname">E-mail</h:outputLabel>
 				<h:inputText id="email" value="#{employeeModelBean.email}"
 					required="true"></h:inputText>
-				<h:outputLabel for="firstname">Birth date</h:outputLabel>
+				<br/>
+				<h:outputLabel for="firstname">Date de naissance</h:outputLabel>
 				<h:inputText id="birthDate" value="#{employeeModelBean.birthDate}"
 					required="true">
 					<f:convertDateTime pattern="yyyy-MM-dd"/>
 				</h:inputText>
-
+				<br/>
 				<h:messages globalOnly="true" infoClass="info" />
 
-				<h:commandButton value="Add"
+				<h:commandButton value="Ajouter"
 					action="#{employeeController.addEmployee(employeeModelBean)}" />
 			</fieldset>
 		</h:form>
+		<h:link class="btn btn-primary" outcome="/users.xhtml">Revenir à la liste des utilisateurs</h:link>
 	</ui:define>
 </ui:composition>
 </html>

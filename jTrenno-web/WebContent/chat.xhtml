@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layout.xhtml">
+	<ui:define name="content">
+		<h2>Conversation</h2>
+		<ul>
+			<li>
+				<div class="pseudo">Caligone</div>
+				<div class="message">What's up guys?</div>
+			</li>
+			<li>
+				<div class="pseudo">Ffxcryiller</div>
+				<div class="message">Not much</div>
+			</li>
+			<li>
+				<div class="pseudo">Caligone</div>
+				<div class="message">So interesting</div>
+			</li>
+			<li>
+				<div class="pseudo">Ffxcryiller</div>
+				<div class="message">I know dude</div>
+			</li>
+		</ul>
+		<h:form>
+			<fieldset>
+				<legend>Chat</legend>
+				<h:outputLabel for="firstname">Pseudo du destinataire</h:outputLabel>
+				<h:inputText
+					id="username"
+					value="#{employeeModelBean.username}"
+					required="true">
+				</h:inputText>
+				<br/>
+				<h:outputLabel class="message" for="firstname">Message</h:outputLabel>
+				<h:inputTextarea id="message"
+					required="true"></h:inputTextarea>
+				<br/>
+				<h:commandButton value="Envoyer"/>
+			</fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

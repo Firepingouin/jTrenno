@@ -4,6 +4,10 @@
 	min-height: 400px;
 }
 
+li {
+	list-style-type: none;
+}
+
 footer {
 	text-align: center;
 	padding-top: 20px;
@@ -29,10 +33,75 @@ h1 {
 	background-color: #123456;
 }
 
+h1 a, h1 a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
 h2 {
 	border-bottom: 3px solid #123456;
 }
 
 label {
 	padding-right: 10px;
+	min-width: 135px;
+}
+
+label.message {
+	min-width: 160px;
+}
+
+input {
+	margin-right: 10px;
+}
+
+nav {
+	padding-top: 20px;
+}
+
+.content ul {
+	padding: 0;
+	marin: 0;
+}
+
+.content ul li:nth-child(even) {
+	padding-right: 30%;
+}
+
+.content ul li:nth-child(odd) {
+	padding-left: 30%;
+}
+
+.content li .message {
+	padding: 5px 0px;
+}
+
+.content li .pseudo {
+	color: grey;
+	font-size: 12px;
+	border-bottom: 1px dashed grey;
+}
+
+nav ul li a {
+	display: block;
+	padding: 10px 15px;
+	color: #fff;
+	background-color: #123456;
+	border-bottom: 1px solid #fff;
+}
+
+nav ul li a:hover {
+	color: #123456;
+	background-color: #fff;
+	transition: background ease 0.5;
+}
+
+aside img {
+	position: absolute;
+	left: 115px;
+	top: 175px;
+}
+
+footer {
+	margin-top: 20px;
 }

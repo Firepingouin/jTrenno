@@ -8,9 +8,7 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
-import com.cpe.jee.beans.EmployeeModelBean;
 import com.cpe.jee.beans.ProjectModelBean;
-import com.cpe.jee.facade.EmployeeManagerLocal;
 import com.cpe.jee.facade.ProjectManagerLocal;
 import com.irc.jee.model.Employee;
 import com.irc.jee.model.Project;
