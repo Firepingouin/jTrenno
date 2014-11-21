@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import com.cpe.jee.beans.EmployeeModelBean;
@@ -21,6 +22,7 @@ public class EmployeeController {
 		try {
 			employeeManager.createEmployee(e.getFirstname(), e.getLastname(),
 					e.getUsername(), e.getEmail(), e.getBirthDate());
+			FacesContext.getCurrentInstance().getExternalContext().redirect("users.xhtml");
 		} catch (Exception ex) {
 			String errorMessage = getRootErrorMessage(ex);
 		}

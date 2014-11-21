@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import com.cpe.jee.beans.ProjectModelBean;
@@ -23,6 +24,7 @@ public class ProjectController {
 	public void addProject(ProjectModelBean e) throws Exception {
 		try {
 			projectManager.createProject(e.getBudget(), e.getDescription(), e.getName(), e.getManager());
+			FacesContext.getCurrentInstance().getExternalContext().redirect("projects.xhtml");
 		} catch (Exception ex) {
 			String errorMessage = getRootErrorMessage(ex);
 		}

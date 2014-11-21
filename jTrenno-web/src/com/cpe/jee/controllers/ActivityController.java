@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import com.cpe.jee.beans.ActivityModelBean;
@@ -24,6 +25,7 @@ public class ActivityController {
 	public void addActivity(ActivityModelBean a) throws Exception {
 		try {
 			activityManager.createActivity(a.getWorkedTime(), a.getEmployee(), a.getProject());
+			FacesContext.getCurrentInstance().getExternalContext().redirect("activities.xhtml");
 		} catch (Exception ex) {
 			String errorMessage = getRootErrorMessage(ex);
 		}
