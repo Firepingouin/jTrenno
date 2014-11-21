@@ -10,11 +10,11 @@
 	<ui:define name="content">
 
 		<h:messages />
-		<h2>Projects</h2>
+		<h2>Projets</h2>
 		<h:dataTable value="#{projectController.getProjects()}" var="u" styleClass="table table-striped">
 			<h:column>
 				<f:facet name="header">
-				Name
+				Nom
 				</f:facet>
 				<h:outputText value="#{u.name}" />
 			</h:column>
