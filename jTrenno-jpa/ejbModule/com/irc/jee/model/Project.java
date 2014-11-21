@@ -28,7 +28,7 @@ public class Project implements Serializable {
 	private List<Activity> activities;
 
 	//bi-directional many-to-one association to Employee
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="manager_id")
 	private Employee employee;
 

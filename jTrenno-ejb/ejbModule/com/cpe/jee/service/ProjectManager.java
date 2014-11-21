@@ -27,7 +27,7 @@ public class ProjectManager implements ProjectManagerLocal {
 	
 	@Inject
 	private EmployeeManagerLocal employeeManager;
-
+	
 	@Override
 	public void createProject(float budget, String description, String name, int manager) {
 		Project p = new Project();
@@ -42,6 +42,10 @@ public class ProjectManager implements ProjectManagerLocal {
 	
 	public List<Employee> getManagersList() {
 		return em.createQuery("select e from Employee e").getResultList();
+	}
+	
+	public List<Project> getProjects() {
+		return em.createQuery("select p from Project p").getResultList();
 	}
 
 }
