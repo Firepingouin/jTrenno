@@ -1,7 +1,9 @@
 package com.irc.jee.model;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +13,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name = "conversation")
 @NamedQuery(name="Conversation.findAll", query="SELECT c FROM Conversation c")
 public class Conversation implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 #main {
-	min-height: 400px;
+	min-height: 500px;
 }
 
 li {
@@ -48,7 +48,7 @@ label {
 }
 
 label.message {
-	min-width: 160px;
+	min-width: 169px;
 }
 
 input {
@@ -99,7 +99,7 @@ nav ul li a:hover {
 aside img {
 	position: absolute;
 	left: 115px;
-	top: 175px;
+	top: 250px;
 }
 
 footer {
