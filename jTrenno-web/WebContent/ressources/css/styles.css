@@ -1,5 +1,27 @@
 @CHARSET "UTF-8";
 
+#main {
+	min-height: 400px;
+}
+
+footer {
+	text-align: center;
+	padding-top: 20px;
+	border-top: 3px solid #123456;
+}
+
+.btn.btn-primary {
+	margin-top: 10px;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #123456;
+}
+
+.btn.btn-primary:hover {
+	background-color: #fff;
+	color: #123456;
+}
+
 h1 {
 	padding: 10px;
 	color: #fff;
@@ -7,9 +29,10 @@ h1 {
 	background-color: #123456;
 }
 
-a {
-	border: 2px solid #123456;
-	padding: 5px 10px;
-	margin: 0 10px;
-	display: inline-block;
+h2 {
+	border-bottom: 3px solid #123456;
+}
+
+label {
+	padding-right: 10px;
 }
