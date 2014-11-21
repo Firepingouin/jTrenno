@@ -6,7 +6,9 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="layout.xhtml">
+
 	<ui:define name="content">
+
 		<h:messages />
 		<h2>Users</h2>
 		<h:dataTable value="#{employeeManager.getEmployees()}" var="u" styleClass="table table-striped">
@@ -29,6 +31,7 @@
 				<h:outputText value="#{u.lastname}" />
 			</h:column>
 		</h:dataTable>
+		<h:link outcome="/addUser.xhtml">Add user</h:link>
 	</ui:define>
 </ui:composition>
 </html>
